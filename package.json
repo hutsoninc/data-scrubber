@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "datasets-us-states-names-abbr": "^1.0.0",
-    "hutson-location-data": "^1.0.0",
+    "hutson-location-data": "^1.0.4",
     "is-email": "^1.0.0",
     "is-phone": "^2.0.0",
     "is-valid-zip": "0.0.5"

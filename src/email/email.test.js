@@ -13,6 +13,14 @@ describe("email validation", function() {
     }
   });
 
+  test("should return empty string", function() {
+    let vals = ["my@email@gmail.com", "myemail@gmailcom"];
+
+    for (let i = 0; i < vals.length; i++) {
+      expect(validate(vals[i])).toEqual("");
+    }
+  });
+
   test("should set default options", function() {
     let val = "contactus@hutsoninc.com";
 
