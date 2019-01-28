@@ -65,5 +65,9 @@
       "prettier"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hutsoninc/data-scrubber"
+  },
   "license": "MIT"
 }
