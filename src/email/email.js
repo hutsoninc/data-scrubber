@@ -1,5 +1,5 @@
 const validate = require("is-email");
-const { isEmpty } = require("../../utils/utils");
+const { isEmpty } = require("../utils");
 
 /**
  * Validates and formats an email.

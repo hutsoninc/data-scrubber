@@ -1,5 +1,5 @@
 const validate = require("is-phone");
-const { isEmpty } = require("../../utils/utils");
+const { isEmpty } = require("../utils");
 
 /**
  * Validates and formats a phone number.

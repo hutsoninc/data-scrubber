@@ -1,24 +1,24 @@
-const validate = require("./state");
+const scrub = require("./state");
 
 describe("state validation", function() {
   test("should return same values", function() {
-    let vals = ["KY", "TN", "IL", "IN"];
+    const vals = ["KY", "TN", "IL", "IN"];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i])).toEqual(vals[i]);
+      expect(scrub(vals[i])).toEqual(vals[i]);
     }
   });
 
   test("should return empty string", function() {
-    let vals = ["x", " ", "."];
+    const vals = ["x", " ", "."];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i])).toEqual("");
+      expect(scrub(vals[i])).toEqual("");
     }
   });
 
   test("should return formatted state", function() {
-    let vals = [
+    const vals = [
       {
         in: "Kentucky",
         out: "KY"
@@ -38,7 +38,7 @@ describe("state validation", function() {
     ];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i].in)).toEqual(vals[i].out);
+      expect(scrub(vals[i].in)).toEqual(vals[i].out);
     }
   });
 });

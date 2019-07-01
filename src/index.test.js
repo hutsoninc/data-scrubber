@@ -1,14 +1,22 @@
 const scrubber = require("./index");
-const { validatePhone } = require("./index");
+const {
+  scrubEmail,
+  scrubHutsonBranch,
+  scrubPhone,
+  scrubState,
+  scrubZip
+} = require("./index");
 
 describe("imports", function() {
-  let val = "1234567890";
-
   test("entire lib", function() {
-    expect(scrubber.validatePhone(val)).toEqual(val);
+    expect(scrubber).toBeInstanceOf(Object);
   });
 
-  test("single function", function() {
-    expect(validatePhone(val)).toEqual(val);
+  test("individual functions", function() {
+    expect(scrubEmail).toBeInstanceOf(Function);
+    expect(scrubHutsonBranch).toBeInstanceOf(Function);
+    expect(scrubPhone).toBeInstanceOf(Function);
+    expect(scrubState).toBeInstanceOf(Function);
+    expect(scrubZip).toBeInstanceOf(Function);
   });
 });

@@ -6,14 +6,14 @@ const stateNames = Object.keys(states);
  * @private
  */
 
-let statesFull = [];
+const statesFull = [];
 
 /**
  * Abbreviated US state names.
  * @private
  */
 
-let statesAbbr = [];
+const statesAbbr = [];
 
 for (let i = 0; i < stateNames.length; i++) {
   statesFull.push(stateNames[i]);

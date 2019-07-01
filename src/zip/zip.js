@@ -1,5 +1,5 @@
 const validate = require("is-valid-zip");
-const { isEmpty } = require("../../utils/utils");
+const { isEmpty } = require("../utils");
 
 /**
  * Validates and formats a zip code.

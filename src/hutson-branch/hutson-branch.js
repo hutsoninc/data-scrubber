@@ -1,5 +1,5 @@
 const hutsonLocations = require("hutson-location-data");
-const { isEmpty } = require("../../utils/utils");
+const { isEmpty } = require("../utils");
 
 /**
  * Validates and formats a Hutson branch name.
@@ -19,7 +19,7 @@ function hutsonBranch(val) {
 
   // Check if not empty and valid
   if (!isEmpty(val)) {
-    let store = hutsonLocations.find(obj => {
+    const store = hutsonLocations.find(obj => {
       // Check by branch number
       if (obj.locationNumber === val) {
         return true;

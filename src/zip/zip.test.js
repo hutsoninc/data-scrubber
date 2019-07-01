@@ -1,24 +1,24 @@
-const validate = require("./zip");
+const scrub = require("./zip");
 
 describe("zip code validation", function() {
   test("should return same values", function() {
-    let vals = ["12345", "45678", "94261", "42025", "90210"];
+    const vals = ["12345", "45678", "94261", "42025", "90210"];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i])).toEqual(vals[i]);
+      expect(scrub(vals[i])).toEqual(vals[i]);
     }
   });
 
   test("should return empty string", function() {
-    let vals = ["abcde", "1234", ".", "x"];
+    const vals = ["abcde", "1234", ".", "x"];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i])).toEqual("");
+      expect(scrub(vals[i])).toEqual("");
     }
   });
 
   test("should return formatted zip code", function() {
-    let vals = [
+    const vals = [
       {
         in: "12345-6789",
         out: "12345"
@@ -34,7 +34,7 @@ describe("zip code validation", function() {
     ];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i].in)).toEqual(vals[i].out);
+      expect(scrub(vals[i].in)).toEqual(vals[i].out);
     }
   });
 });

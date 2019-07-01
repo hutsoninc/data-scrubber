@@ -1,5 +1,10 @@
-const { isEmpty, capitalizeFirstLetter } = require("../../utils/utils");
-const { states, statesFull, statesAbbr } = require("./utils/constants");
+const {
+  isEmpty,
+  capitalizeFirstLetter,
+  states,
+  statesFull,
+  statesAbbr
+} = require("../utils");
 
 /**
  * Validates and formats a US state.

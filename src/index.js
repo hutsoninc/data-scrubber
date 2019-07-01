@@ -1,13 +1,13 @@
-const validateEmail = require("./email/email");
-const validateHutsonBranch = require("./hutson-branch/hutsonBranch");
-const validatePhone = require("./phone/phone");
-const validateState = require("./state/state");
-const validateZip = require("./zip/zip");
+const scrubEmail = require("./email");
+const scrubHutsonBranch = require("./hutson-branch");
+const scrubPhone = require("./phone");
+const scrubState = require("./state");
+const scrubZip = require("./zip");
 
 module.exports = {
-  validateEmail,
-  validateHutsonBranch,
-  validatePhone,
-  validateState,
-  validateZip
+  scrubEmail,
+  scrubHutsonBranch,
+  scrubPhone,
+  scrubState,
+  scrubZip
 };

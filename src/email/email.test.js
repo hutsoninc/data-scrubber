@@ -1,37 +1,37 @@
-const validate = require("./email");
+const scrub = require("./email");
 
 describe("email validation", function() {
   test("should return same values", function() {
-    let vals = [
+    const vals = [
       "awesomeemail@gmail.com",
       "hello123@outlook.com",
       "mickey@mouse.com"
     ];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i])).toEqual(vals[i]);
+      expect(scrub(vals[i])).toEqual(vals[i]);
     }
   });
 
   test("should return empty string", function() {
-    let vals = ["my@email@gmail.com", "myemail@gmailcom"];
+    const vals = ["my@email@gmail.com", "myemail@gmailcom"];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i])).toEqual("");
+      expect(scrub(vals[i])).toEqual("");
     }
   });
 
   test("should set default options", function() {
-    let val = "contactus@hutsoninc.com";
+    const val = "contactus@hutsoninc.com";
 
-    expect(validate(val)).toEqual("");
+    expect(scrub(val)).toEqual("");
   });
 
   test("should override default options", function() {
-    let val = "contactus@hutsoninc.com";
+    const val = "contactus@hutsoninc.com";
 
-    expect(validate(val, { filterHutson: true })).toEqual("");
-    expect(validate(val, { filterHutson: false })).toEqual(
+    expect(scrub(val, { filterHutson: true })).toEqual("");
+    expect(scrub(val, { filterHutson: false })).toEqual(
       "contactus@hutsoninc.com"
     );
   });

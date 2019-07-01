@@ -1,25 +1,25 @@
-const validate = require("./hutsonBranch");
+const scrub = require("./hutson-branch");
 const hutsonLocations = require("hutson-location-data");
 
 describe("hutson branch validation", function() {
   test("should return same values", function() {
-    let vals = hutsonLocations.map(obj => obj.title);
+    const vals = hutsonLocations.map(obj => obj.title);
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i])).toEqual(vals[i]);
+      expect(scrub(vals[i])).toEqual(vals[i]);
     }
   });
 
   test("should return empty string", function() {
-    let vals = ["KY", "x", " ", "", "21"];
+    const vals = ["KY", "x", " ", "", "21"];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i])).toEqual("");
+      expect(scrub(vals[i])).toEqual("");
     }
   });
 
   test("should return formatted hutson branch", function() {
-    let vals = [
+    const vals = [
       {
         in: 1,
         out: "Mayfield, KY"
@@ -39,7 +39,7 @@ describe("hutson branch validation", function() {
     ];
 
     for (let i = 0; i < vals.length; i++) {
-      expect(validate(vals[i].in)).toEqual(vals[i].out);
+      expect(scrub(vals[i].in)).toEqual(vals[i].out);
     }
   });
 });
