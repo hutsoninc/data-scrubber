@@ -1,6 +1,6 @@
 {
   "name": "@hutsoninc/data-scrubber",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Data validation and formatting utilities used by Hutson marketing team.",
   "main": "src/index.js",
   "scripts": {
